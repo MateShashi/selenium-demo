@@ -31,11 +31,11 @@ public class Base implements SauceOnDemandSessionIdProvider {
 
     @Before
     public void setUp() throws Exception {
-        String browserName = System.getProperty("browserName");
+        String browserName = "chrome";//System.getProperty("browserName");
 
         driver = BrowserFactory.getBrowser(browserName);
-
         this.sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
+        //driver.get("http://18.212.63.55/");
         driver.manage().timeouts().implicitlyWait(Wait.EXPLICIT_WAIT, TimeUnit.SECONDS);
     }
 
